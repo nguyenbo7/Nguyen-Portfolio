@@ -95,7 +95,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: black;
+  background-color: whitesmoke;
+  color: var(--clr-dark);
 }
 nav {
   height: 3.5rem;
@@ -109,8 +110,8 @@ nav {
   color: var(--clr-gray);
 }
 .nav__logo {
-  font-size: 1.1rem;
-  font-weight: var(--font-semi-bold);
+  font-size: 1.25rem;
+  font-weight: var(--fw-semi-bold);
   margin-left: 1.5rem;
 }
 .nav__toggle {
@@ -156,4 +157,84 @@ nav {
   font-size: 3rem;
   cursor: pointer;
   color: var(--clr-hover);
+}
+/*========================= [ HOME SECTION ] =========================*/
+main {
+  margin-top: 3.5rem;
+}
+/*____________________ home__main ____________________*/
+.home__main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.home__socialMedia-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home__social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.home__social-icon {
+  font-size: var(--fs-small);
+  color: black;
+  margin: 0.25rem 0;
+}
+.vertical__line {
+  border-left: 4px solid var(--clr-theme);
+  height: 3rem;
+  margin: 1rem 0;
+}
+.home__img-profile {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(152, 153, 153, 0) 0deg,
+    #313633 19.87deg,
+    rgba(152, 153, 153, 0) 360deg
+  );
+}
+.home__scroll {
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+  width: auto;
+}
+.home__scroll-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  /* animation properties */
+
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+
+  -webkit-animation: my-animation 3s linear infinite;
+  animation: my-animation 3s linear infinite;
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+  }
+}
+
+@keyframes my-animation {
+  from {
+    -webkit-transform: translateY(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+    transform: translateX(100%);
+  }
 }
