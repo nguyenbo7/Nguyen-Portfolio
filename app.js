@@ -30,3 +30,4 @@ function linkAction() {
     navMenu.classList.remove('nav__show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
