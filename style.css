@@ -4,10 +4,10 @@
 /*========================= VARIABLES CSS =========================*/
 :root {
   /*____________________ Colors ____________________*/
-  --clr-dark: #222222;
+  --clr-dark: #181818;
   --clr-gray: #44494a;
   --clr-light: #d4cfc2;
-  --clr-theme: #ff0000;
+  --clr-theme: #ff4500;
   --clr-border: #bababa;
   --clr-hover: #ff0000;
 
@@ -108,7 +108,7 @@ nav {
 }
 .nav__logo,
 .nav__toggle {
-  color: var(--clr-gray);
+  color: var(--clr-dark);
 }
 .nav__logo {
   font-size: 1.25rem;
@@ -185,7 +185,7 @@ main {
   /* align-items: center; */
 }
 .home__socialMedia-bar {
-  height: 62%;
+  height: 34vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,51 +222,26 @@ main {
   border-top: 4px solid var(--clr-light);
   border-bottom: 16px solid var(--clr-light);
 }
-.home__scroll {
+.home__adj {
   width: 100%;
   height: auto;
-  overflow: hidden;
-  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  font-size: var(--fs-small);
+  letter-spacing: 2px;
+  font-weight: var(--fw-semi-bold);
   /* background-color: black; */
 }
 
-.home__scroll-text p {
-  font-size: var(--fs-small);
-  letter-spacing: 2px;
-  text-align: center;
-  font-weight: var(--fw-semi-bold);
-}
-
-.home__barcode {
-  font-family: var(--font-family-barcode);
-  font-size: 3rem;
-  color: orangered;
-}
-.home__description {
-  width: 100%;
-}
-/* .home__title p {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 0.15em solid var(--clr-gray);
-  font-size: 1.5rem;
-  font-weight: var(--fw-semi-bold);
-  margin: 1.5rem 0 1rem;
-  letter-spacing: 0.15em;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-} */
-
-.home__title p {
+.home__title {
   white-space: nowrap;
   overflow: hidden;
   font-size: 1.5rem;
   font-weight: var(--fw-semi-bold);
   margin: 1.5rem 0 1rem;
-  border-right: solid 3px var(--clr-gray);
-  animation: animated-text 5s steps(30, end) 1s 1 normal both,
-    animated-cursor 1.5s steps(30, end) infinite;
+  animation: animated-text 2.5s steps(18, end);
 }
-
 @keyframes animated-text {
   from {
     width: 0;
@@ -275,11 +250,81 @@ main {
     width: 100%;
   }
 }
-@keyframes animated-cursor {
-  from {
-    border-right-color: var(--clr-gray);
+.home__barcode {
+  font-family: var(--font-family-barcode);
+  font-size: 3rem;
+  color: #ff4500;
+  transition: 750ms;
+}
+/* .home__barcode:hover {
+  font-size: 1.25rem;
+  font-family: var(--font-family-text);
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  width: max-content;
+} */
+/*____________________ special ____________________*/
+.special__container {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 3rem 2rem;
+}
+.special__container:hover {
+  background: linear-gradient(-45deg, #181818, #d4cfc2, #ff4500, #d4cfc2);
+  background-size: 1000% 1000%;
+  animation: animated-gradient 5s ease-in infinite;
+}
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    border-right-color: transparent;
+  50% {
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.special__case {
+  height: 200px;
+  transition: background-color 550ms ease-in;
+}
+.special__case-1 {
+  margin-right: 0.5rem;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(152, 153, 153, 0) 0deg,
+    #313633 19.87deg,
+    rgba(152, 153, 153, 0) 360deg
+  );
+}
+.special__case:hover {
+  background-color: #181818;
+}
+.special__case-2 {
+  margin-bottom: 0.5rem;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    rgba(152, 153, 153, 0) 0deg,
+    #313633 19.87deg,
+    rgba(152, 153, 153, 0) 360deg
+  );
+}
+.special__case-3 {
+  margin-right: 0.5rem;
+  background: conic-gradient(
+    from -90deg at 50% 50%,
+    rgba(152, 153, 153, 0) 0deg,
+    #313633 19.87deg,
+    rgba(152, 153, 153, 0) 360deg
+  );
+}
+.special__case-4 {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(152, 153, 153, 0) 0deg,
+    #313633 19.87deg,
+    rgba(152, 153, 153, 0) 360deg
+  );
 }
